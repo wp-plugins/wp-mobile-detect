@@ -1,6 +1,6 @@
 === WP Mobile Detect ===
 Contributors: professor44
-Donate link: http://jes.se.com/
+Donate link: http://elannazuller.com/memorial-fund/
 Tags: mobile, responsive, 
 Requires at least: 2.8.4
 Tested up to: 3.4
@@ -18,6 +18,7 @@ No longer do we need to rely on display:none; or other techniques to hide conten
 WP Mobile detect gives you the ability to wrap that infographic in a [notdevice][/notdevice] shortcode so at the server level WordPress will decide to show that content only if the user is NOT on a phone or tablet. Alternatively you can wrap a link and corresponding text to that info graphic in a [device][/device] shortcode as a way for the visitor to consume that content if they so choose.
 
 This plugin is based on the <a href="http://code.google.com/p/php-mobile-detect/" target="_blank">PHP Mobile Detect class</a>
+WordPress Plugin written by <a href="http://jes.se.com" target="_blank">Jesse Friedman</a>
 
 == Installation ==
 
