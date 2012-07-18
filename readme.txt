@@ -54,12 +54,6 @@ If you want to see some rate and comment on this plugin
 
 For now I've only made shortcodes but you can either call the do shortcode function in your theme or write your own functions.  In future releases functions will come with all shortcodes
 
-== Screenshots ==
-
-1. This screen shot description corresponds to screenshot-1.(png|jpg|jpeg|gif). Note that the screenshot is taken from
-the directory of the stable readme.txt, so in this case, `/tags/4.3/screenshot-1.png` (or jpg, jpeg, gif)
-2. This is the second screen shot
-
 == Changelog ==
 
 = 1.0.0 =
