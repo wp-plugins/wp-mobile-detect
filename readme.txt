@@ -17,7 +17,7 @@ No longer do we need to rely on display:none; or other techniques to hide conten
 
 WP Mobile detect gives you the ability to wrap that infographic in a [notdevice][/notdevice] shortcode so at the server level WordPress will decide to show that content only if the user is NOT on a phone or tablet. Alternatively you can wrap a link and corresponding text to that info graphic in a [device][/device] shortcode as a way for the visitor to consume that content if they so choose.
 
-This plugin is based on the PHP Mobile Detect class 
+This plugin is based on the <a href="http://code.google.com/p/php-mobile-detect/" target="_blank">PHP Mobile Detect class</a>
 
 == Installation ==
 
@@ -33,20 +33,20 @@ e.g.
 
 = What shortcodes are available with this plugin =
 
-[phone]Put content here that you only want displayed on Phones NOT Tablets or Desktops[/phone] 
-[tab]Put content here that you only want displayed on Tablets NOT Phones or Desktops[/tab]
-[device]Put content here that you only want displayed on Phones OR Tablets NOT Desktops[/device]
-[notphone]Put content here that you only want displayed on Tablets OR Desktops NOT Phones[/notphone]
-[nottab]Put content here that you only want displayed on Phones OR Desktops NOT Tablets[/nottab]
-[notdevice]Put content here that you only want displayed on Desktops NOT Phones OR Tablets[/notdevice]
+* [phone]Put content here that you only want displayed on Phones NOT Tablets or Desktops[/phone] 
+* [tab]Put content here that you only want displayed on Tablets NOT Phones or Desktops[/tab]
+* [device]Put content here that you only want displayed on Phones OR Tablets NOT Desktops[/device]
+* [notphone]Put content here that you only want displayed on Tablets OR Desktops NOT Phones[/notphone]
+* [nottab]Put content here that you only want displayed on Phones OR Desktops NOT Tablets[/nottab]
+* [notdevice]Put content here that you only want displayed on Desktops NOT Phones OR Tablets[/notdevice]
 
 = Are you planning on adding more shortcodes in the future? =
 
 Yes I plan on adding shortcodes for 
-*Android Only
-*iOS Only 
-*Mobile Browsers
-*And More
+* Android Only
+* iOS Only 
+* Mobile Browsers
+* And More
 
 If you want to see some rate and comment on this plugin
 
