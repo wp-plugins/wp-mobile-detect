@@ -1,7 +1,7 @@
 <?php 
 /*
 Plugin Name: WP Mobile Detect
-Version: .9
+Version: 1.0
 Plugin URI: http://jes.se.com/wp-mobile-detect
 Description: A WordPress plugin based on the PHP Mobile Detect class (Original author Victor Stanciu now maintained by Serban Ghita) incorporates functions and shortcodes to empower User Admins to have better control of when content is served
 Author: Jesse Friedman 
