@@ -28,7 +28,7 @@ e.g.
 
 1. Upload the `wp-mobile-detect` folder to the `/wp-content/plugins/` directory
 2. Activate the plugin through the 'Plugins' menu in WordPress
-3. Start using the shortcodes in your content
+3. Start using the shortcodes in your content or functions in  your theme
 
 == Frequently Asked Questions ==
 
@@ -40,6 +40,15 @@ e.g.
 * [notphone]Put content here that you only want displayed on Tablets OR Desktops NOT Phones[/notphone]
 * [nottab]Put content here that you only want displayed on Phones OR Desktops NOT Tablets[/nottab]
 * [notdevice]Put content here that you only want displayed on Desktops NOT Phones OR Tablets[/notdevice]
+
+= What functions are available with this plugin =
+
+* wpmd_is_notphone() - Returns true when on desktops or tablets
+* wpmd_is_nottab() - Returns true when on desktops or phones
+* wpmd_is_notdevice() - Returns true when on desktops only
+* wpmd_is_phone() - Returns true when on phones ONLY
+* wpmd_is_tablet() - Returns true when on Tablets ONLY
+* wpmd_is_device() - Returns true when on phones or tablets but NOT destkop
 
 = Are you planning on adding more shortcodes in the future? =
 
@@ -57,9 +66,15 @@ For now I've only made shortcodes but you can either call the do shortcode funct
 
 == Changelog ==
 
+= 1.1.0 =
+
+* Changed function namespace prefix from "jesse_" to "wpmd_"
+* Deprecated [tab] shortcode, replaced by [tablet]
+* Addition of theme functions for mobile detection 
+* Fixed bug where shortcodes would not run inside the mobile detect shortcodes
+
+
 = 1.0.0 =
 
 Initial release.
-
-
 

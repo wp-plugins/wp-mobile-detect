@@ -4,12 +4,12 @@ Plugin Name: WP Mobile Detect
 Version: 1.0
 Plugin URI: http://jes.se.com/wp-mobile-detect
 Description: A WordPress plugin based on the PHP Mobile Detect class (Original author Victor Stanciu now maintained by Serban Ghita) incorporates functions and shortcodes to empower User Admins to have better control of when content is served
-Author: Jesse Friedman 
+Author: wpmd Friedman 
 Author URI: http://jes.se.com
 License: GPL v3
 
 WP Mobile Detect
-Copyright (C) 2012, Jesse Friedman - http://jes.se.com
+Copyright (C) 2012, wpmd Friedman - http://jes.se.com
 
 This program is free software: you can redistribute it and/or modify
 it under the terms of the GNU General Public License as published by
@@ -39,63 +39,132 @@ $detect = new Mobile_Detect();
 /********************************************//**
 * Generates [notmobile][/notmobile] shortcode which shows content on desktops or tablets
 ***********************************************/
-function jesse_notphone( $tats, $content="" ) {
+function wpmd_notphone( $tats, $content="" ) {
 	global $detect;
-	if( ! $detect->isMobile() || $detect->isTablet() )return "{$content}";
+	if( ! $detect->isMobile() || $detect->isTablet() ) return do_shortcode($content);
 }
-add_shortcode( 'notphone', 'jesse_notphone' );
+add_shortcode( 'notphone', 'wpmd_notphone' );
+
+
+
+/********************************************//**
+* Returns true when on desktops or tablets
+***********************************************/
+function wpmd_is_notphone() {
+	global $detect;
+	if( ! $detect->isMobile() || $detect->isTablet() ) return true;
+}
 
 
 
 /********************************************//**
 * Generates [nottab][/nottab] shortcode which shows content on desktops or phones
 ***********************************************/
-function jesse_nottab( $tats, $content="" ) {
+function wpmd_nottab( $tats, $content="" ) {
 	global $detect;
-	if( ! $detect->isTablet() )return "{$content}";
+	if( ! $detect->isTablet() ) return do_shortcode($content);
 }
-add_shortcode( 'nottab', 'jesse_nottab' );
+add_shortcode( 'nottab', 'wpmd_nottab' );
+
+
+
+/********************************************//**
+* Returns true when on desktops or phones
+***********************************************/
+function wpmd_is_nottab() {
+	global $detect;
+	if( ! $detect->isTablet() ) return true;
+}
 
 
 
 /********************************************//**
 * Generates [notdevice][/notdevice] shortcode which shows content on desktops only
 ***********************************************/
-function jesse_notdevice( $tats, $content="" ) {
+function wpmd_notdevice( $tats, $content="" ) {
 	global $detect;
-	if( ! $detect->isMobile() && ! $detect->isTablet() ) return "{$content}";
+	if( ! $detect->isMobile() && ! $detect->isTablet() ) return do_shortcode($content);
 }
-add_shortcode( 'notdevice', 'jesse_notdevice' );
+add_shortcode( 'notdevice', 'wpmd_notdevice' );
+
+
+
+/********************************************//**
+* Returns true when on desktops only
+***********************************************/
+function wpmd_is_notdevice() {
+	global $detect;
+	if( ! $detect->isMobile() && ! $detect->isTablet() ) return true;
+}
 
 
 
 /********************************************//**
 * Generates [phone][/phone] shortcode which shows content on phones ONLY
 ***********************************************/
-function jesse_phone( $tats, $content="" ) {
+function wpmd_phone( $tats, $content="" ) {
 	global $detect;
-	if( $detect->isMobile() && ! $detect->isTablet() )return "{$content}";
+	if( $detect->isMobile() && ! $detect->isTablet() ) return do_shortcode($content);
 }
-add_shortcode( 'phone', 'jesse_phone' );
+add_shortcode( 'phone', 'wpmd_phone' );
 
 
 
 /********************************************//**
-* Generates [tab][/tab] shortcode which shows content on Tablets ONLY
+* Returns true when on phones ONLY
 ***********************************************/
-function jesse_tab( $tats, $content="" ) {
+function wpmd_is_phone() {
 	global $detect;
-	if( $detect->isTablet() )return "{$content}";
+	if( $detect->isMobile() && ! $detect->isTablet() ) return true;
 }
-add_shortcode( 'tab', 'jesse_tab' );
+
+
+
+/********************************************//**
+* Generates [tablet][/tablet] shortcode which shows content on Tablets ONLY
+***********************************************/
+function wpmd_tablet( $tats, $content="" ) {
+	global $detect;
+	if( $detect->isTablet() ) return do_shortcode($content);
+}
+add_shortcode( 'tablet', 'wpmd_tablet' );
+
+/********************************************//**
+* WARNING: This is deprecated. Conflicts with the [tab] shortcode changed to [tablet] Generates [tab][/tab] shortcode which shows content on Tablets ONLY
+***********************************************/
+function wpmd_tab( $tats, $content="" ) {
+	global $detect;
+	if( $detect->isTablet() ) return do_shortcode($content);
+}
+add_shortcode( 'tab', 'wpmd_tab' );
+
+
+
+/********************************************//**
+* Returns true when on Tablets ONLY
+***********************************************/
+function wpmd_is_tablet() {
+	global $detect;
+	if( $detect->isTablet() ) return true;
+}
 
 
 
 /********************************************//**
 * Generates [device][/device] shortcode which shows content on phones or tablets but NOT destkop
 ***********************************************/
-function jesse_device( $tats, $content="" ) {
+function wpmd_device( $tats, $content="" ) {
 	global $detect;
-	if( $detect->isMobile() || $detect->isTablet() ) return "{$content}";
+	if( $detect->isMobile() || $detect->isTablet() ) return do_shortcode($content);
 }
-add_shortcode( 'device', 'jesse_device' );
+add_shortcode( 'device', 'wpmd_device' );
+
+
+
+/********************************************//**
+* Returns true when on phones or tablets but NOT destkop
+***********************************************/
+function wpmd_is_device() {
+	global $detect;
+	if( $detect->isMobile() || $detect->isTablet() ) return true;
+}
