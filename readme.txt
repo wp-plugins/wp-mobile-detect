@@ -4,7 +4,7 @@ Donate link: http://elannazuller.com/memorial-fund/
 Tags: mobile, responsive, 
 Requires at least: 2.8.4
 Tested up to: 3.4
-Stable tag: 4.3
+Stable tag: 1.1.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
