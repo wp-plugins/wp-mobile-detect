@@ -1,7 +1,7 @@
 <?php 
 /*
 Plugin Name: WP Mobile Detect
-Version: 1.1.0
+Version: 1.2.0
 Plugin URI: http://jes.se.com/wp-mobile-detect
 Description: A WordPress plugin based on the PHP Mobile Detect class (Original author Victor Stanciu now maintained by Serban Ghita) incorporates functions and shortcodes to empower User Admins to have better control of when content is served
 Author: Jesse Friedman 
@@ -167,4 +167,109 @@ add_shortcode( 'device', 'wpmd_device' );
 function wpmd_is_device() {
 	global $detect;
 	if( $detect->isMobile() || $detect->isTablet() ) return true;
+}
+
+
+
+/********************************************//**
+* Generates [ios][/ios] shortcode which shows content on iOS devices only
+***********************************************/
+function wpmd_ios( $tats, $content="" ) {
+	global $detect;
+	if( $detect->isiOS() ) return do_shortcode($content);
+}
+add_shortcode( 'ios', 'wpmd_ios' );
+
+
+
+/********************************************//**
+* Returns true when on iOS
+***********************************************/
+function wpmd_is_ios() {
+	global $detect;
+	if( $detect->isiOS() ) return true;
+}
+
+
+
+/********************************************//**
+* Generates [iPhone][/iPhone] shortcode which shows content on iPhone's only
+***********************************************/
+function wpmd_iphone( $tats, $content="" ) {
+	global $detect;
+	if( $detect->isiPhone() ) return do_shortcode($content);
+}
+add_shortcode( 'iPhone', 'wpmd_iphone' );
+
+
+
+/********************************************//**
+* Returns true when on iPhone
+***********************************************/
+function wpmd_is_iphone() {
+	global $detect;
+	if( $detect->isiPhone() ) return true;
+}
+
+
+
+/********************************************//**
+* Generates [iPad][/iPad] shortcode which shows content on iPad's only
+***********************************************/
+function wpmd_ipad( $tats, $content="" ) {
+	global $detect;
+	if( $detect->isiPad() ) return do_shortcode($content);
+}
+add_shortcode( 'iPad', 'wpmd_ipad' );
+
+
+
+/********************************************//**
+* Returns true when on iPad
+***********************************************/
+function wpmd_is_ipad() {
+	global $detect;
+	if( $detect->isiPad() ) return true;
+}
+
+
+
+/********************************************//**
+* Generates [android][/android] shortcode which shows content on Android devices only
+***********************************************/
+function wpmd_android( $tats, $content="" ) {
+	global $detect;
+	if( $detect->isAndroidOS() ) return do_shortcode($content);
+}
+add_shortcode( 'android', 'wpmd_android' );
+
+
+
+/********************************************//**
+* Returns true when on Android OS
+***********************************************/
+function wpmd_is_android() {
+	global $detect;
+	if( $detect->isAndroidOS() ) return true;
+}
+
+
+
+/********************************************//**
+* Generates [windowsmobile][/windowsmobile] shortcode which shows content on Windows Mobile devices only
+***********************************************/
+function wpmd_windows_mobile( $tats, $content="" ) {
+	global $detect;
+	if( $detect->isWindowsMobileOS() ) return do_shortcode($content);
+}
+add_shortcode( 'windowsmobile', 'wpmd_windows_mobile' );
+
+
+
+/********************************************//**
+* Returns true when on Android OS
+***********************************************/
+function wpmd_is_windows_mobile() {
+	global $detect;
+	if( $detect->isWindowsMobileOS() ) return true;
 }
