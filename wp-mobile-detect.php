@@ -1,9 +1,9 @@
 <?php 
 /*
 Plugin Name: WP Mobile Detect
-Version: 1.2.0
+Version: 2.0
 Plugin URI: http://jes.se.com/wp-mobile-detect
-Description: A WordPress plugin based on the PHP Mobile Detect class (Original author Victor Stanciu now maintained by Serban Ghita) incorporates functions and shortcodes to empower User Admins to have better control of when content is served
+Description: A WordPress plugin based on the PHP Mobile Detect class (Original author Victor Stanciu now maintained by Serban Ghita) incorporates functions and shortcodes to empower User Admins to have better control of when content is served on mobile
 Author: Jesse Friedman 
 Author URI: http://jes.se.com
 License: GPL v3
@@ -256,6 +256,27 @@ function wpmd_is_android() {
 
 
 /********************************************//**
+* Generates [blackberry][/blackberry] shortcode which shows content on Blackberry devices only
+***********************************************/
+function wpmd_blackberry( $tats, $content="" ) {
+	global $detect;
+	if( $detect->isBlackBerry() ) return do_shortcode($content);
+}
+add_shortcode( 'blackberry', 'wpmd_blackberry' );
+
+
+
+/********************************************//**
+* Returns true when on a Blackberry device
+***********************************************/
+function wpmd_is_blackberry() {
+	global $detect;
+	if( $detect->isBlackBerry() ) return true;
+}
+
+
+
+/********************************************//**
 * Generates [windowsmobile][/windowsmobile] shortcode which shows content on Windows Mobile devices only
 ***********************************************/
 function wpmd_windows_mobile( $tats, $content="" ) {
@@ -267,9 +288,115 @@ add_shortcode( 'windowsmobile', 'wpmd_windows_mobile' );
 
 
 /********************************************//**
-* Returns true when on Android OS
+* Returns true when on Windows OS
 ***********************************************/
 function wpmd_is_windows_mobile() {
 	global $detect;
 	if( $detect->isWindowsMobileOS() ) return true;
 }
+
+
+
+/********************************************//**
+* Generates [chrome][/chrome] shortcode which shows content on Chrome browsers only
+***********************************************/
+function wpmd_chrome_browser( $tats, $content="" ) {
+	global $detect;
+	if( $detect->isChrome() ) return do_shortcode($content);
+}
+add_shortcode( 'chrome', 'wpmd_chrome_browser' );
+
+
+
+/********************************************//**
+* Returns true when in a Chrome browser
+***********************************************/
+function wpmd_is_chrome_browser() {
+	global $detect;
+	if( $detect->isChrome() ) return true;
+}
+
+
+
+/********************************************//**
+* Generates [opera][/opera] shortcode which shows content on Opera browsers only
+***********************************************/
+function wpmd_opera_browser( $tats, $content="" ) {
+	global $detect;
+	if( $detect->isOpera() ) return do_shortcode($content);
+}
+add_shortcode( 'opera', 'wpmd_opera_browser' );
+
+
+
+/********************************************//**
+* Returns true when in a Opera browser
+***********************************************/
+function wpmd_is_opera_browser() {
+	global $detect;
+	if( $detect->isOpera() ) return true;
+}
+
+
+
+/********************************************//**
+* Generates [internetexplorer][/internetexplorer] shortcode which shows content on Internet Explorer browsers only
+***********************************************/
+function wpmd_ie_browser( $tats, $content="" ) {
+	global $detect;
+	if( $detect->isIE() ) return do_shortcode($content);
+}
+add_shortcode( 'ie', 'wpmd_ie_browser' );
+
+
+
+/********************************************//**
+* Returns true when in a IE browser
+***********************************************/
+function wpmd_is_ie_browser() {
+	global $detect;
+	if( $detect->isIE() ) return true;
+}
+
+
+
+/********************************************//**
+* Generates [firefox][/firefox] shortcode which shows content on Firefox browsers only
+***********************************************/
+function wpmd_firefox_browser( $tats, $content="" ) {
+	global $detect;
+	if( $detect->isFirefox() ) return do_shortcode($content);
+}
+add_shortcode( 'firefox', 'wpmd_firefox_browser' );
+
+
+
+/********************************************//**
+* Returns true when in a Firefox browser
+***********************************************/
+function wpmd_is_firefox_browser() {
+	global $detect;
+	if( $detect->isFirefox() ) return true;
+}
+
+
+
+/********************************************//**
+* Generates [safari][/safari] shortcode which shows content on Safari browsers only
+***********************************************/
+function wpmd_safari_browser( $tats, $content="" ) {
+	global $detect;
+	if( $detect->isSafari() ) return do_shortcode($content);
+}
+add_shortcode( 'safari', 'wpmd_safari_browser' );
+
+
+
+/********************************************//**
+* Returns true when in a Safari browser
+***********************************************/
+function wpmd_is_safari_browser() {
+	global $detect;
+	if( $detect->isSafari() ) return true;
+}
+
