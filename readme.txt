@@ -1,17 +1,19 @@
 === WP Mobile Detect ===
 Contributors: professor44
-Donate link: http://elannazuller.com/memorial-fund/
-Tags: mobile, responsive, 
+Donate link: http://amzn.to/1KHiZ8s
+Tags: mobile, responsive, browsers, 
 Requires at least: 2.8.4
-Tested up to: 3.5
-Stable tag: 1.2.0
+Tested up to: 4.2
+Stable tag: 2.0
 License: GPLv2 or later
 License URI: http://www.gnu.org/licenses/gpl-2.0.html
 
 WP Mobile Detect by Jesse Friedman creates an easy way for the User Admin to control when content is shown or hid based on visitor device or operating system
 == Description ==
 
-One of the hardest parts of building Responsive WordPress themes is maintaining responsive integrity after the site goes live. User Admins can have limited coding abilities which can prevent them from maintaining responsiveness in themes. WP Mobile Detect aims to make it extremely easy for anyone to wrap content in the editor with shortcodes which will hide content based on visitor device at the server level.
+One of the hardest parts of building Responsive WordPress themes is maintaining responsive integrity after the site goes live. User Admins can have limited coding abilities which can prevent them from maintaining responsiveness in themes. 
+
+WP Mobile Detect aims to make it extremely easy for anyone to wrap content in the editor with shortcodes which will hide content based on visitor device at the server level.
 
 No longer do we need to rely on display:none; or other techniques to hide content for mobile devices. Instead we can replace content with alternatives. When a full-size infographic in your post is unknowingly displayed on a visitors phone we can consider that an Non-user initiated download. In other words that visitor had no idea what they were getting into and you possibly just choked their bandwidth. 
 
@@ -45,6 +47,12 @@ e.g.
 * [iPad]Put content here, that you only want displayed on iPads[/iPad]
 * [android]Put content here, that you only want displayed on Android devices[/android]
 * [windowsmobile]Put content here, that you only want displayed on Windows Mobile devices[/windowsmobile]
+* [blackberry]Put content here, that you only want displayed on Blackberry devices[/blackberry]
+* [chrome]Put content here, that you only want displayed on mobile Chrome browsers[/chrome]
+* [safari]Put content here, that you only want displayed on mobile Safari browsers[/safari]
+* [opera]Put content here, that you only want displayed on mobile Opera browsers[/opera]
+* [firefox]Put content here, that you only want displayed on mobile Firefox browsers[/Firefox]
+* [ie]Put content here, that you only want displayed on mobile Internet Explorer browsers[/ie]
 
 = What functions are available with this plugin =
 
@@ -53,19 +61,26 @@ e.g.
 * wpmd_is_notdevice() - Returns true when on desktops only
 * wpmd_is_phone() - Returns true when on phones ONLY
 * wpmd_is_tablet() - Returns true when on Tablets ONLY
-* wpmd_is_device() - Returns true when on phones or tablets but NOT destkop
+* wpmd_is_device() - Returns true when on phones or tablets but NOT desktop
 * wpmd_is_ios() - Returns true when on an iOS device
 * wpmd_is_iphone() - Returns true when on iPhones
 * wpmd_is_ipad() - Returns true when on iPads
 * wpmd_is_android() - Returns true when on Android
 * wpmd_is_windows_mobile() - Returns true when on Windows Mobile
+* wpmd_is_blackberry() - Returns true when on Blackberry
+* wpmd_is_chrome_browser() -  Returns true when on mobile Chrome browser
+* wpmd_is_safari_browser() -  Returns true when on mobile Safari browser
+* wpmd_is_opera_browser() -  Returns true when on mobile Opera browser
+* wpmd_is_ie_browser() -  Returns true when on mobile Internet Explorer browser
+* wpmd_is_firefox_browser() -  Returns true when on mobile Firefox browser
 
 = Are you planning on adding more shortcodes in the future? =
 
 Yes I plan on adding shortcodes for 
 * Android Only - DONE
 * iOS Only  - DONE
-* Mobile Browsers - Coming Soon
+* Mobile Browsers - DONE
+* Blackberry - DONE
 * And More
 
 If you want to see some rate and comment on this plugin
@@ -75,6 +90,13 @@ If you want to see some rate and comment on this plugin
 For now I've only made shortcodes but you can either call the do shortcode function in your theme or write your own functions.  In future releases functions will come with all shortcodes
 
 == Changelog ==
+
+= 2.0 = 
+
+* Updated the core Mobile Detect Class 2.8.13
+* Updated shortcodes, adding [blackberry], [chrome], [safari], [opera], [ie], [firefox]
+* Updated functions, adding wpmd_is_blackberry(), wpmd_is_chrome_browser(), wpmd_is_safari_browser(), wpmd_is_opera_browser(), wpmd_is_ie_browser(), wpmd_is_firefox_browser()
+* Updated readme and some links
 
 = 1.2.0 =
 
